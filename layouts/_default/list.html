@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="posts">
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" (or .Params.type "posts")) }}
+  {{ $paginator := .Paginate (where .Site.RegularPages "Type" (or .Params.contentTypeName ($.Site.Params.contentTypeNameForIndexPage | default "posts"))) }}
 
   {{ range $paginator.Pages }}
   <div class="post on-list">

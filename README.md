@@ -73,21 +73,35 @@ languageCode = "en-us"
 theme = "terminal"
 paginate = 5
 
+
 [params]
+  # you can set which content type should appear on index page (default is "posts" for `content/posts/*`)
+  # contentTypeNameForIndexPage = "posts"
+
   # ["orange", "blue", "red", "green", "pink"]
   themeColor = "orange"
+
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 2
+
   # show selector to switch language
   showLanguageSelector = false
+
   # set theme to full screen width
   fullWidthTheme = false
+
   # center theme with default width
   centerTheme = false
+
   # hide "Read Other Posts" below post content (text defined below in languages section)
   # disableReadOtherPosts = true
+
   # set a custom favicon (default is a `themeColor` square)
   # favicon = "favicon.ico"
+
+  # set all headings to their default size (depending on browser settings)
+  # it's set to `true` by default
+  # oneHeadingSize = false
 
 [languages]
   [languages.en]

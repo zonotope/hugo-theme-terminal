@@ -7,8 +7,8 @@
 @import '../variables.css';
 
 :root {
-  --accent: #23B0FF;
-  --background: color-mod(var(--accent) blend(#1D1E28 98%));
-  --color: white;
+  --accent: #6699cc
+  --background: color-mod(var(--accent) blend(#2d2d2d 98%));
+  --color: #cccccc;
   --border-color: rgba(255, 255, 255, .1);
 }

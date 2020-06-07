@@ -28,7 +28,7 @@
   <img src="{{ . | absURL }}" class="post-cover" />
   {{ end }}
 
-  {{ if and (.Site.adsense) (.Params.adsenseTop) }}
+  {{ if and (.Site.googleAdsense) (.Params.adsenseTop) }}
   {{ partial "adsense" . }}
   {{ end }}
 
@@ -66,7 +66,7 @@
   </div>
 </div>
 {{ end }}
-{{ if and (.Site.adsense)  (.Params.adsenseBottom) }}
+{{ if and (.Site.googleAdsense)  (.Params.adsenseBottom) }}
 {{ partial "adsense" . }}
 {{ end}}
 

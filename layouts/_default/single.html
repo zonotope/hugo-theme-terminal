@@ -1,7 +1,8 @@
 {{ define "main" }}
 <div class="post">
   <h1 class="post-title">
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  </h1>
   <div class="post-meta">
     {{ if .Params.Date }}
     <span class="post-date">
@@ -25,6 +26,10 @@
 
   {{ with .Params.Cover }}
   <img src="{{ . | absURL }}" class="post-cover" />
+  {{ end }}
+
+  {{ if and (.Site.adsense) (.Params.adsenseTop) }}
+  {{ partial "adsense" . }}
   {{ end }}
 
   <div class="post-content">
@@ -61,6 +66,9 @@
   </div>
 </div>
 {{ end }}
+{{ if and (.Site.adsense)  (.Params.adsenseBottom) }}
+{{ partial "adsense" . }}
+{{ end}}
 
 {{ partial "comments.html" . }}
 </div>

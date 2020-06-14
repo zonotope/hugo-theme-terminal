@@ -5,9 +5,13 @@
 
   {{ $PageContext := . }}
   {{ if .IsHome }}
-    {{ $PageContext = .Site }}
+  {{ $PageContext = .Site }}
   {{ end }}
   {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}
+
+  {{ if and (.Params.googleAdsense) (.Params.adsenseTop) }}
+  {{ partial "adsense" . }}
+  {{ end }}
 
   {{ range $paginator.Pages }}
   <div class="post on-list">
@@ -50,11 +54,15 @@
     {{ if not .Params.showFullContent }}
     <div>
       <a class="read-more button"
-        href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
+         href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
     </div>
     {{ end }}
   </div>
   {{ end }}
+  {{ if and (.Params.googleAdsense)  (.Params.adsenseBottom) }}
+  {{ partial "adsense" . }}
+  {{ end}}
+
   {{ partial "pagination.html" . }}
 </div>
 {{ end }}
